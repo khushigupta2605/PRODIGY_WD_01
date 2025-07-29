@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServiceCo - Premium Business Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #004d40;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+    .logo { font-size: 1.8em; font-weight: bold; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links li a {
+      color: white; text-decoration: none; font-weight: 500;
+    }
+    .nav-links li a:hover, .nav-links li a.active {
+      border-bottom: 2px solid white;
+    }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px; height: 3px; background: white;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px; right: 0;
+        background: #00332d;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+    }
+    header {
+      padding: 120px 20px 100px;
+      background: linear-gradient(to right, #26a69a, #00796b);
+      text-align: center; color: white;
+    }
+    header h1 { font-size: 2.5em; margin-bottom: 15px; }
+    header p { font-size: 1.2em; margin-bottom: 30px; }
+    .cta-btn {
+      background: white;
+      color: #00796b;
+      padding: 12px 25px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover { background: #e0f2f1; }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 { font-size: 2em; margin-bottom: 20px; }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .feature-box {
+      background: white;
+      width: 300px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+    .feature-box h3 {
+      color: #00796b;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #004d40;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    input[type="submit"] {
+      background: #00796b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    input[type="submit"]:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">ServiceCo</div>
+    <ul class="nav-links" id="nav-links">
+  <li><a href="index.html" class="nav-item">Home</a></li>
+  <li><a href="#services" class="nav-item">Services</a></li>
+  <li><a href="#about" class="nav-item">About</a></li>
+  <li><a href="#contact" class="nav-item">Contact</a></li>
+</ul>
+
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <h1>Empowering Your Business With Our Expertise</h1>
+    <p>Professional web development, digital marketing, and design solutions.</p>
+    <a href="#contact" class="cta-btn">Start a Project</a>
+  </header>
+
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="features">
+      <div class="feature-box" onclick="window.open('web-development.html', '_blank')">
+        <h3>Web Development</h3>
+        <p>Responsive, fast-loading websites built with the latest technologies.</p>
+      </div>
+      <div class="feature-box" onclick="window.open('digital-marketing.html', '_blank')">
+        <h3>Digital Marketing</h3>
+        <p>SEO, content marketing, and advertising that grow your audience.</p>
+      </div>
+      <div class="feature-box" onclick="window.open('graphic-design.html', '_blank')">
+        <h3>Graphic Design</h3>
+        <p>Creative logos, branding, and design assets that make you stand out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We are a team of passionate professionals committed to delivering impactful digital solutions. With expertise in development, marketing, and design, we bring your ideas to life.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Ready to start your project? Fill out the form below or email us directly.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 ServiceCo. All rights reserved.
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
